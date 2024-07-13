@@ -1,0 +1,16 @@
+.movieReviews ul {
+    list-style: none;
+    padding: 0;
+}
+
+.movieReviews li {
+    margin-bottom: 20px;
+}
+
+.movieReviews h3 {
+    margin: 0 0 10px 0;
+}
+
+.movieReviews p {
+    margin: 0;
+}

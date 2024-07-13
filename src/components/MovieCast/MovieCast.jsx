@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMovieCast } from "../../Movies_api";
 import { useParams } from "react-router-dom";
+import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -24,19 +25,35 @@ export default function MovieCast() {
     fetchMovieCast();
   }, [movieId]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
   return (
-    <div>
-      <h2>Cast</h2>
-      <ul>
-        {cast.map((actor) => (
-          <li key={actor.cast_id}>
-            {actor.name} as {actor.character}
-          </li>
-        ))}
-      </ul>
+    <div className={css.movieСast}>
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
+      {!loading && !error && cast.length === 0 && (
+        <div>No cast information available</div>
+      )}
+      {!loading && !error && cast.length > 0 && (
+        <div className={css.castGrid}>
+          {cast.map((actor) => (
+            <div className={css.castItem} key={actor.id}>
+              {actor.profile_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                  alt={actor.name}
+                />
+              ) : (
+                <div className={css.noImage}>No Image</div>
+              )}
+              <div className={css.castInfo}>
+                <p className={css.castName}>{actor.name}</p>
+                <p className={css.castCharacter}>
+                  Character: {actor.character}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

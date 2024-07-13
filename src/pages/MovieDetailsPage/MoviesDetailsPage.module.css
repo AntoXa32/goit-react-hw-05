@@ -1,0 +1,76 @@
+.container {
+    padding: 20px;
+}
+
+.goBackButton {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #c5656a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.arrowIcon {
+    margin-right: 10px;
+}
+
+.goBackButton:hover {
+    background-color: #b3002a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goBackButton:focus {
+    outline: none;
+}
+
+.movies {
+    display: flex;
+    align-items: flex-start;
+}
+
+.inform {
+    margin-left: 20px;
+}
+
+.inform h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.inform p {
+    margin: 10px 0;
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    margin-left: 25px;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

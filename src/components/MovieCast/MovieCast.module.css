@@ -1,0 +1,50 @@
+.movieСast {
+    padding: 20px;
+}
+
+.castGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.castItem {
+    width: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+
+
+.castItem img,
+.castItem .noImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.noImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.castInfo {
+    padding: 10px;
+}
+
+.castName {
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.castCharacter {
+    color: #555;
+}
